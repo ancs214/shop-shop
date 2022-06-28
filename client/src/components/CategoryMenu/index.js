@@ -13,7 +13,7 @@ function CategoryMenu() {
 
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
 
-  //need useEffect hook to take data from useQuery and then use dispatch method to set global state
+  //because useQuery is asynch func, we need useEffect hook to wait for our query response to come in...then take data from useQuery and use dispatch method to set global state
   useEffect(() => {
     // if categoryData exists or has changed from the response of useQuery, then run dispatch()
     if (categoryData) {
